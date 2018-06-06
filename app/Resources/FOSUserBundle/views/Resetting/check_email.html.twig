@@ -1,0 +1,21 @@
+{% extends "@FOSUser/layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+    <div class="login-box">
+        <!-- /.login-logo -->
+        <div class="login-box-body">
+            <div class="row">
+                <p>
+                    {{ 'resetting.check_email'|trans({'%tokenLifetime%': tokenLifetime})|nl2br }}
+                </p>
+            </div>
+        </div>
+        <!-- /.login-box-body -->
+    </div>
+    <div class="form-actions">
+        <a role="button" id="back-btn" class="btn red btn-outline" href="{{ path('fos_user_security_login') }}">Retour à la page de connexion</a>
+    </div>
+    <!-- /.login-box -->
+{% endblock %}
